@@ -20,13 +20,13 @@ print(reversed)
 '''
 
 #Task 3: Make a star
+'''
 import turtle
+
 length = int(input("Enter the length of the star: "))
 
 turtle.pensize(2)
 turtle.speed(8)
-down = turtle.pendown()
-up = turtle.penup()
 
 for i in range(5):
     turtle.pendown()
@@ -36,7 +36,62 @@ for i in range(5):
 
 turtle.hideturtle()
 turtle.done()
+'''
 
 #Task 4: Olympic Rings
+'''
+import turtle
+
+radius = int(input("Enter the radius: "))
+
+def create_ring(rad):
+    turtle.pendown()
+    turtle.circle(radius)
+    turtle.penup()
+
+turtle.penup()
+turtle.pensize(2)
+turtle.speed(15)
+
+turtle.goto(-150, 0)
+create_ring(radius)
+
+turtle.forward(radius/5)
+turtle.right(108)
+create_ring(radius)
+
+turtle.left(108)
+turtle.forward(radius*2 - (radius * 0.1))
+turtle.right(12)
+create_ring(radius)
+
+
+turtle.forward(radius * 0.4)
+turtle.right(88)
+create_ring(radius)
+turtle.left(102)
+
+turtle.forward(radius*2 - (radius * 0.08))
+turtle.right(12)
+create_ring(radius)
+
+turtle.hideturtle()
+turtle.done()
+'''
 
 #Task 5: Make a triangle (using points)
+import turtle
+
+p1x,p1y = input("Enter first point for triangle (x,y): ").split(",")
+p2x,p2y = input("Enter second point for triangle (x,y): ").split(",")
+p3x,p3y = input("Enter third point for triangle (x,y): ").split(",")
+
+turtle.penup()
+turtle.goto(int(p1x), int(p1y))
+turtle.pendown()
+turtle.goto(int(p2x), int(p2y))
+turtle.goto(int(p3x), int(p3y))
+turtle.goto(int(p1x), int(p1y))
+turtle.penup()
+turtle.hideturtle()
+turtle.done()
