@@ -1,54 +1,54 @@
 #Task 1
 
-import turtle
+# import turtle
 
-p0x, p0y = input("Enter the first point (x,y): ").split(",")
-p1x, p1y = input("Enter the second point (x,y): ").split(",")
-p2x, p2y = input("Enter the third point (x,y): ").split(",")
+# p0x, p0y = input("Enter the first point (x,y): ").split(",")
+# p1x, p1y = input("Enter the second point (x,y): ").split(",")
+# p2x, p2y = input("Enter the third point (x,y): ").split(",")
 
-p0x, p0y, p1x, p1y, p2x, p2y = int(p0x), int(p0y), int(p1x), int(p1y), int(p2x), int(p2y)
+# p0x, p0y, p1x, p1y, p2x, p2y = int(p0x), int(p0y), int(p1x), int(p1y), int(p2x), int(p2y)
 
-turtle.penup()
-turtle.pensize(2)
-turtle.speed(8)
-turtle.goto(p0x, p0y)
-turtle.dot(5)
-turtle.write("P0")
-turtle.pendown()
-turtle.goto(p1x, p1y)
-turtle.dot(5)
-turtle.write("P1")
-turtle.penup()
+# turtle.penup()
+# turtle.pensize(2)
+# turtle.speed(8)
+# turtle.goto(p0x, p0y)
+# turtle.dot(5)
+# turtle.write("P0")
+# turtle.pendown()
+# turtle.goto(p1x, p1y)
+# turtle.dot(5)
+# turtle.write("P1")
+# turtle.penup()
 
-turtle.goto(p2x, p2y)
-turtle.dot(5)
-turtle.write("P2")
-turtle.pendown()
-turtle.penup()
+# turtle.goto(p2x, p2y)
+# turtle.dot(5)
+# turtle.write("P2")
+# turtle.pendown()
+# turtle.penup()
 
-turtle.goto(p2x, p2y - 20)
-#cross product
-#left hand side will have positive number, right hand is negative
-side_value = (p1x - p0x) * (p2y - p0y) - (p1y - p0y) * (p2x - p0x)
+# turtle.goto(p2x, p2y - 20)
+# #cross product
+# #left hand side will have positive number, right hand is negative
+# side_value = (p1x - p0x) * (p2y - p0y) - (p1y - p0y) * (p2x - p0x)
 
-if side_value > 0:
-    turtle.write("Point 2 is on the left side of the line")
-elif side_value < 0:
-    turtle.write("Point 2 is on the right side of the line")
-else:
-    turtle.write("Point 2 is on the line")
+# if side_value > 0:
+#     turtle.write("Point 2 is on the left side of the line")
+# elif side_value < 0:
+#     turtle.write("Point 2 is on the right side of the line")
+# else:
+#     turtle.write("Point 2 is on the line")
 
-turtle.hideturtle()
-turtle.done()
+# turtle.hideturtle()
+# turtle.done()
 
 #Task 2
 
 import turtle
 
 x1, y1 = input("Enter the first rectangle's point (x,y): ").split(",")
-width1, height1 = input("Enter the first rectangle's point (x,y): ").split(",")
+width1, height1 = input("Enter the first rectangle's height and width (h,w): ").split(",")
 x2, y2 = input("Enter the second rectangle's point (x,y): ").split(",")
-width2, height2 = input("Enter the second rectangle's point (x,y): ").split(",")
+width2, height2 = input("Enter the second rectangle's point (h,w): ").split(",")
 
 x1, y1 = int(x1), int(y1)
 width1, height1 = int(width1), int(height1)
@@ -100,7 +100,7 @@ r1_in_r2 = is_inside(x1, y1, width1, height1, x2, y2, width2, height2)
 r2_in_r1 = is_inside(x2, y2, width2, height2, x1, y1, width1, height1)
 
 turtle.penup()
-turtle.goto(0, -250)
+turtle.goto(x1, y1 - 20)
 if r1_in_r2:
     turtle.write("Rectangle 1 is inside Rectangle 2.")
 elif r2_in_r1:
@@ -110,5 +110,5 @@ elif overlaps:
 else:
     turtle.write("The rectangles doesn't overlap.")
 
-turtle.done()
 turtle.hideturtle()
+turtle.done()
