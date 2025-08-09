@@ -48,7 +48,7 @@ import turtle
 x1, y1 = input("Enter the first rectangle's point (x,y): ").split(",")
 width1, height1 = input("Enter the first rectangle's height and width (h,w): ").split(",")
 x2, y2 = input("Enter the second rectangle's point (x,y): ").split(",")
-width2, height2 = input("Enter the second rectangle's point (h,w): ").split(",")
+width2, height2 = input("Enter the second rectangle's height and width (h,w): ").split(",")
 
 x1, y1 = int(x1), int(y1)
 width1, height1 = int(width1), int(height1)

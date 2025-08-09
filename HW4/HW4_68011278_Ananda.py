@@ -46,9 +46,9 @@ turtle.done()
 import turtle
 
 x1, y1 = input("Enter the first rectangle's point (x,y): ").split(",")
-width1, height1 = input("Enter the first rectangle's point (x,y): ").split(",")
+width1, height1 = input("Enter the first rectangle's height and width (h,w): ").split(",")
 x2, y2 = input("Enter the second rectangle's point (x,y): ").split(",")
-width2, height2 = input("Enter the second rectangle's point (x,y): ").split(",")
+width2, height2 = input("Enter the second rectangle's height and width (h,w): ").split(",")
 
 x1, y1 = int(x1), int(y1)
 width1, height1 = int(width1), int(height1)
@@ -100,7 +100,7 @@ r1_in_r2 = is_inside(x1, y1, width1, height1, x2, y2, width2, height2)
 r2_in_r1 = is_inside(x2, y2, width2, height2, x1, y1, width1, height1)
 
 turtle.penup()
-turtle.goto(0, -250)
+turtle.goto(x1, y1 - 20)
 if r1_in_r2:
     turtle.write("Rectangle 1 is inside Rectangle 2.")
 elif r2_in_r1:
@@ -110,5 +110,5 @@ elif overlaps:
 else:
     turtle.write("The rectangles doesn't overlap.")
 
-turtle.done()
 turtle.hideturtle()
+turtle.done()
